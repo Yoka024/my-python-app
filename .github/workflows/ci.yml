@@ -43,10 +43,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest .
+        run: docker build -t yoka24/my-python-app:latest .
 
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
+        run: docker push yoka24/my-python-app:latest
 
   deploy:
     needs: docker
@@ -54,6 +54,6 @@ jobs:
     steps:
       - name: Simulate deployment
         run: echo "Deploying to staging server..."
-    steps:
+  steps:
       - name: Симуляція деплою на staging
         run: echo "Deploying my-python-app to staging server..."
