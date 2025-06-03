@@ -26,6 +26,8 @@ jobs:
 
       - name: Запустити тести
         run: pytest
+          export PYTHONPATH=.
+          pytest
 
   docker:
     needs: build-test
