@@ -36,12 +36,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-
       - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest .
-
-      - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/my-python-app:latest
+        run: docker build -t python-app:latest
 
   deploy:
     needs: docker
